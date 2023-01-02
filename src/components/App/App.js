@@ -19,11 +19,15 @@ class App extends Component {
       })
   }
 
+  handleSubmit = (trick) => {
+    this.setState({ tricks: [...this.state.tricks, trick] })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
-        <Form />
+        <Form handleSubmit={this.handleSubmit}/>
         <TrickList tricks={this.state.tricks}/>
       </div>
     );

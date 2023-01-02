@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Form.css';
 
 class Form extends Component {
-    constructor() {
+    constructor({ handleSubmit }) {
         super()
         this.state = {
             stance: 'Choose Your Stance',
@@ -10,6 +10,7 @@ class Form extends Component {
             obstacle: 'Choose Your Obstacle',
             tutorial: '',
         }
+        this.handleSubmit = handleSubmit
     }
 
     handleChange = (event) => {
@@ -34,6 +35,11 @@ class Form extends Component {
                     <option value="Pool">Pool</option>
                 </select>
                 <input name='tutorial' placeholder='Link to Tutorial' value={this.state.tutorial} onChange={this.handleChange}></input>
+                <button onClick={(event) => {
+                    event.preventDefault()
+                    this.handleSubmit(this.state)
+                    }}>Send It!
+                </button>
             </form>
         )
     }
