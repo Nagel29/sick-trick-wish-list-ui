@@ -1,0 +1,17 @@
+[
+  { 
+    "stance": "regular",
+    "name": "kickflip",
+    "obstacle": "flat ground",
+    "tutorial": "www.learn2skate.com/1",
+    "id": 1
+  },
+  { 
+    "stance": "switch",
+    "name": "heelflip",
+    "obstacle": "stairs",
+    "tutorial": "www.learn2skate.com/2",
+    "id": 2
+  }
+]
+
