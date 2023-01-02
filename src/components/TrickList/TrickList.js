@@ -5,7 +5,7 @@ const TrickList = ({ tricks }) => {
 
     let tricksForRender = tricks.map(trick => {
         return (
-        <div className='trick' key={trick.id}>
+        <div className='trick' key={trick.id || Math.floor(Math.random() * 99999999)}>
             <p>{trick.stance} {trick.name}</p>
             <p>Obstacle: {trick.obstacle}</p>
             <p>Link to Tutorial:</p>
