@@ -1,18 +1,28 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import { fetchData } from '../../apiCalls'
+import { fetchData } from '../../apiCalls';
+import TrickList from '../TrickList/TrickList';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      tricks: [],
+    }
+  }
 
   componentDidMount() {
     Promise.resolve(fetchData())
-      .then(data => console.log(data))
+      .then(data => {
+        this.setState({tricks: data})
+      })
   }
 
   render() {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
+        <TrickList tricks={this.state.tricks}/>
       </div>
     );
   }

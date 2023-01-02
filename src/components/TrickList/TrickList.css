@@ -1,0 +1,10 @@
+.trick {
+    background-color: aliceblue;
+}
+
+.trick-container {
+    display: grid;
+    grid-template-columns: 20% 20% 20%;
+    grid-gap: 5%;
+    justify-content: center;
+}
